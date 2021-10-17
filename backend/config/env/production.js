@@ -19,7 +19,7 @@
  * https://sailsjs.com/docs/concepts/deployment
  */
 
-module.exports = {
+ module.exports = {
 
 
   /**************************************************************************
@@ -239,21 +239,10 @@ module.exports = {
   * > this section from your `config/env/production.js` file.                *
   *                                                                          *
   ***************************************************************************/
-  sockets: {
-
-    /***************************************************************************
-    *                                                                          *
-    * Uncomment the `onlyAllowOrigins` whitelist below to configure which      *
-    * "origins" are allowed to open socket connections to your Sails app.      *
-    *                                                                          *
-    * > Replace "https://example.com" etc. with the URL(s) of your app.        *
-    * > Be sure to use the right protocol!  ("http://" vs. "https://")         *
-    *                                                                          *
-    ***************************************************************************/
-    // onlyAllowOrigins: [
-    //   'https://example.com',
-    //   'https://staging.example.com',
-    // ],
+   sockets: {
+    onlyAllowOrigins: [
+    'http://localhost:1337',
+    ],
 
 
     /***************************************************************************

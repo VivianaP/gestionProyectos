@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { menu } from './ui/model/menu';
 import { filter, map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { FactoryService } from 'src/app/services/factory.service';
 
 @Component({
   selector: 'app-side-main',
@@ -18,6 +19,7 @@ export class SideMainComponent implements OnDestroy {
   public menu: NavItem[] = menu;
 
   constructor(
+    public factory: FactoryService,
     private media: MediaObserver,
     private router: Router
     ) {
@@ -43,6 +45,8 @@ export class SideMainComponent implements OnDestroy {
   }
 
   signout() {
-    this.router.navigate(['/signin'])
+    localStorage.clear();
+    this.factory.loadUser()
+    this.router.navigate(['auth/login']);
   }
 }

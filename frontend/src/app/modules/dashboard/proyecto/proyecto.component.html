@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Proyectos</h2>
+    <div class="row btn-agregar">
+        <div class="col-sm-12">
+            <a mat-raised-button color="primary" [routerLink]="['/new-proyecto', idRuta]" routerLinkActive="router-link-active">Agregar</a>
+        </div>
+    </div>
+
+    <div class="row proyectos">
+        <div class="col-md-4 col-sm-12" *ngFor="let proyecto of proyectos">
+            <mat-card class="cardGeneral">
+                <mat-card-header>
+                    <mat-card-title>{{proyecto.nombre}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image class="imgProyect2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Electron_Software_Framework_Logo.svg/1024px-Electron_Software_Framework_Logo.svg.png"
+                    alt="Photo of a Shiba Inu">
+                <mat-card-actions>
+                    <button mat-button [routerLink]="['/historia-usuario', proyecto.id]" routerLinkActive="router-link-active">VER</button>
+                    <button mat-button>ELIMINAR</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<body>
+        <div class="container">
+                <h2>Crea tu cuenta</h2>
+                <br>
+                <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                                <mat-form-field appearance="fill">
+                                        <mat-label>Cédula</mat-label>
+                                        <input matInput class="nameOpe" required [(ngModel)]="usuario.cedula">
+                                </mat-form-field>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                                <mat-form-field appearance="fill">
+                                        <mat-label>Nombre</mat-label>
+                                        <input matInput class="nameOpe" required [(ngModel)]="usuario.nombre">
+                                </mat-form-field>
+                        </div>
+                </div>
+                <div class="row">
+                        
+                        <div class="col-md-6 col-sm-12">
+                                <mat-form-field appearance="fill">
+                                        <mat-label>Email</mat-label>
+                                        <input matInput placeholder="viv@ejemplo.com" [formControl]="email" required required
+                                                [(ngModel)]="usuario.email">
+                                        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                                </mat-form-field>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                        <mat-form-field appearance="fill">
+                                <mat-label>Contraseña</mat-label>
+                                <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="usuario.password">
+                                <button mat-icon-button matSuffix (click)="hide = !hide"
+                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                        </mat-form-field>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                                <mat-form-field appearance="fill">
+                                        <mat-label>Teléfono</mat-label>
+                                        <input matInput class="nameOpe" required [(ngModel)]="usuario.telefono">
+                                </mat-form-field>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                                <mat-form-field appearance="fill">
+                                        <mat-label>Compañia</mat-label>
+                                        <mat-select [(ngModel)]="usuario.compania">
+                                                <mat-option [value]="compania.id" *ngFor="let compania of companias" >
+                                                                {{compania.nit + '-' + compania.nombre}}
+                                                </mat-option>
+                                        </mat-select>
+                                </mat-form-field>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                                <mat-form-field appearance="fill">
+                                        <mat-label>Dirección</mat-label>
+                                        <input matInput class="nameOpe" required [(ngModel)]="usuario.direccion">
+                                </mat-form-field>
+                        </div>
+                        
+                </div>
+                <div class="row rowBotones">
+                        <div class="col-md-12 col-sm-12">
+                                <button mat-raised-button color="primary" (click)="registrar()">Registrarse</button>
+                        </div>
+                </div>
+
+        </div>
+</body>

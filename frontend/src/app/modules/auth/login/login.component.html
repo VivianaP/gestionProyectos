@@ -1,0 +1,36 @@
+<body>
+        <div class="container">
+                <h2>Iniciar sesión</h2>
+                <br>
+                <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                                <mat-form-field appearance="fill">
+                                        <mat-label>Usuario</mat-label>
+                                        <input matInput class="nameOpe" [(ngModel)]="usuario.email">
+                                </mat-form-field>
+                        </div>
+                        <div class="col-md-12 col-sm-12">
+                                <div class="example-container">
+                                        <mat-form-field appearance="fill">
+                                                <mat-label>Contraseña</mat-label>
+                                                <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="usuario.password">
+                                                <button mat-icon-button matSuffix (click)="hide = !hide"
+                                                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
+                                                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                                </button>
+                                        </mat-form-field>
+                                </div>
+                        </div>
+                        <div class="row rowBotones">
+                                <div class="col-md-12 col-sm-12">
+                                        <button mat-raised-button color="primary" (click)="login()">Ingresar</button>
+                                </div>
+                                <div class="col-md-12 col-sm-12">
+                                        <br>
+                                        <a [routerLink]="['/auth/register']" routerLinkActive="router-link-active">¿Aún
+                                                no tienes cuenta? Regístrate</a>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</body>

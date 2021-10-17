@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build && firebase deploy",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -35,6 +35,7 @@
     "rxjs": "~6.6.0",
     "signature_pad": "^3.0.0-beta.4",
     "snyk": "^1.733.0",
+    "sweetalert2": "^11.1.9",
     "test": "^0.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

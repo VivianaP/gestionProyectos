@@ -7,13 +7,13 @@ export let menu: NavItem[] = [
         route: './'
     },
     {
-        displayName: 'Clientes',
-        iconName: 'person',
-        route: './cliente'
+        displayName: 'Compañias',
+        iconName: 'business',
+        route: './compania'
     },
     {
-        displayName: 'Servicios',
-        iconName: 'info',
-        route: './servicio'
+        displayName: 'Usuarios',
+        iconName: 'people',
+        route: './usuario'
     }
 ];

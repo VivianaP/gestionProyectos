@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './material/material.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { MaterialModule } from './material/material.module';
     BrowserAnimationsModule,
     RouterModule,
     MaterialModule,
+    HttpClientModule,
     
   ],
   providers: [],
